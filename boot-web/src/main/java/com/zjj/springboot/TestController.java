@@ -4,6 +4,7 @@ import com.zjj.springboot.dao.userDAOMapper;
 import com.zjj.springboot.entity.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ public class TestController {
     @Autowired
     private userDAOMapper userdaoMapper;
 
+    @Transactional
     @RequestMapping("test")
     @ResponseBody
     public UserDAO test(){
