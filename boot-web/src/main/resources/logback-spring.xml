@@ -2,8 +2,9 @@
 
 <configuration debug="false">
 
-    <property name="COMMON_PATTERN"
-              value="[%d{'MM-dd HH:mm:ss,SSS',GMT+8:00}] %-5p [%.10t] %logger{36}[%L] - %m%n" />
+    <!--<property name="COMMON_PATTERN"-->
+              <!--value="[%d{'MM-dd HH:mm:ss,SSS',GMT+8:00}] %-5p [%.10t] %logger{36}[%L] - %m%n" />-->
+    <property name="COMMON_PATTERN" value="%d %-5p %c[%t] - %m%n" />
     <property name="LOG_CHARSET" value="UTF-8" />
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="log" />
@@ -49,18 +50,11 @@
         <appender-ref ref="ERROR"/>
     </logger>
 
-    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
-    <logger name="org.mybatis.spring.SqlSessionUtils" level="DEBUG" />
-
-
-
-    <!--<logger name="com.tqmall.finance">-->
-    <!--<level value="INFO"/>-->
-    <!--</logger>-->
-
+    <logger name="java.sql.PreparedStatement" level="INFO" />
+    <logger name="org.mybatis.spring.SqlSessionUtils" level="INFO" />
 
     <root>
-        <level value="INFO"/>
+        <level value="info"/>
         <appender-ref ref="COMMON"/>
         <appender-ref ref="ERROR"/>
         <appender-ref ref="CONSOLE"/>

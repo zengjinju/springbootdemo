@@ -13,9 +13,10 @@ import javax.sql.DataSource;
 
 /**
  * Created by jinju.zeng on 2017/9/14.
+ * @author jinju.zeng
  */
 @Configuration
-@EnableTransactionManagement(mode = AdviceMode.PROXY) //开启事物默认使用代理的方式，等效于<tx:annotation-driven />
+@EnableTransactionManagement(mode = AdviceMode.ASPECTJ) //开启事物默认使用代理的方式，等效于<tx:annotation-driven />
 public class TransactionConfig {
 
     @Resource(name="druidDataSource")
